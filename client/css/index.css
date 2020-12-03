@@ -51,6 +51,29 @@ table {
   FORMULAIRE
 */
 
+/*pour mes petits yeux*/
+html{
+	background-color: darkslateblue;
+}
+
+div.video-mask{
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transition: top ease-out .5s;
+}
+
+div.video-mask:hover{
+    top: 0px;
+}
+
+.video-mask{
+    border-radius: 50%; 
+    overflow: hidden; 
+}
+
 #formulaire {
   position: absolute;
   right: 0; top: 30vh;
