@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var video=document.getElementsByClassName('autoplay');
+    let video=document.getElementById('autoplay');
     video.addEventListener("mouseover", function(){
         video.autoplay=true;
         video.play();
