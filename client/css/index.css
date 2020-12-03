@@ -64,3 +64,13 @@ table {
   text-align: center;
   margin-top: 20px;
 }
+
+/*
+	Masks
+*/
+.mask {
+    background-image: url("../img/masque.png");
+    background-size: cover;
+	width:33.5px;
+	height: 26px;
+}
