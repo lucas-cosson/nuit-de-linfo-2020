@@ -3,7 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
     activated: false,
     html: document.body.innerHTML,
     alphabet: {
-      3: /i/gi,
+      o: "0",
+      i: "1",
+      z: "2",
+      e: "3",
+      a: "4",
+      s: "5",
+      g: "6",
+      l: "7",
+      b: "8",
     },
   };
 
@@ -18,9 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let child of document.body.childNodes) {
       if (child.innerText !== undefined) {
-        child.innerText = child.innerText.replaceAll(/i/gi, "3");
-        child.innerText = child.innerText.replaceAll(/s/gi, "5");
-        child.innerText = child.innerText.replaceAll(/t/gi, "7");
+        for (let letter in leetSpeakData.alphabet) {
+          const regex = new RegExp(letter, "gi");
+          child.innerText = child.innerText.replaceAll(
+            regex,
+            leetSpeakData.alphabet[letter]
+          );
+        }
       }
     }
   }
