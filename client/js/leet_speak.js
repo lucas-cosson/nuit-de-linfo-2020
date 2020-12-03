@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       a: "4",
       s: "5",
       g: "6",
-      l: "7",
+      t: "7",
       b: "8",
     },
   };
@@ -18,24 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function leetSpeak() {
     if (leetSpeakData.activated) {
       leetSpeakData.activated = false;
-      document.body.innerHTML = leetSpeakData.html;
-      document
-        .getElementById("leet-speak")
-        .addEventListener("click", leetSpeak);
+      window.location.reload();
       return;
     }
 
     leetSpeakData.activated = true;
 
-    for (let child of document.body.childNodes) {
-      if (child.innerText !== undefined) {
-        for (let letter in leetSpeakData.alphabet) {
-          const regex = new RegExp(letter, "gi");
-          child.innerText = child.innerText.replaceAll(
-            regex,
-            leetSpeakData.alphabet[letter]
-          );
-        }
+    for (let child of document.body.children) {
+      console.log(child);
+      for (let letter in leetSpeakData.alphabet) {
+        const regex = new RegExp(letter, "gi");
+        console.log(child.innerHTML);
+        child.innerHTML = child.innerHTML.replaceAll(
+          regex,
+          leetSpeakData.alphabet[letter]
+        );
       }
     }
   }
