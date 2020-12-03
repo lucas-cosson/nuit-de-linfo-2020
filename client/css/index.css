@@ -1,0 +1,270 @@
+/* -------------------- Reset CSS -------------------- */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* -------------------- Général -------------------- */
+
+body {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body > div {
+  box-shadow: -10px 10px 20px #a0a0a0;
+  border: solid 1px #a0a0a0;
+}
+
+div {
+  padding: 10px;
+}
+
+main {
+  background-color: rgb(33, 194, 235);
+}
+
+h1 {
+  text-align: center;
+}
+
+main #mer {
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  z-index: -1000;
+  position: absolute;
+  background-color: rgb(33, 73, 202);
+}
+
+main #plage {
+  background-color: rgb(233, 169, 31);
+  position: absolute;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+}
+
+main #plage span:nth-of-type(1) {
+  border-radius: 100%;
+  background-color: rgb(233, 169, 31);
+  position: absolute;
+  top: -20%;
+  left: 00%;
+  width: 50%;
+  height: 80%;
+}
+
+main #plage span:nth-of-type(2) {
+  border-radius: 100%;
+  background-color: rgb(226, 136, 0);
+  position: absolute;
+  top: -20%;
+  left: 40%;
+  width: 30%;
+  height: 60%;
+}
+
+main #parasol {
+  border-radius: 90%;
+  background-color: rgb(209, 27, 27);
+  position: absolute;
+  bottom: 20%;
+  left: 12.5%;
+  width: 17.5%;
+  height: 7.5%;
+}
+
+main #parasol span {
+  position: absolute;
+  top: 95%;
+  left: 55%;
+  padding-bottom: 8em;
+  width: 3%;
+  background-color: black;
+  transform-origin: left center;
+  transform: translate(100%) rotate(-15deg);
+}
+
+main #surf {
+  border-radius: 90%;
+  background-color: rgb(209, 27, 27);
+  position: absolute;
+  bottom: 5%;
+  left: 80%;
+  width: 5%;
+  height: 20%;
+  transform-origin: left center;
+  transform: translate(100%) rotate(20deg);
+}
+
+main #surf > span {
+  background-color: black;
+  margin-left: 0.7em;
+  margin-top: 100px;
+  padding: 0em 0.4em 6em 0.4em;
+  border-radius: 30%;
+}
+
+main #surf > span::before {
+  display: block;
+  content: "_";
+  background-color: rgb(233, 169, 31);
+  padding: 0px 1.5em;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/*************** CAROUSEL *****************/
+#carousel {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  background-color: rgb(16, 149, 238);
+  width: 50%;
+  height: 50%;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+#carousel #carouselExampleIndicators {
+  height: 100%;
+}
+
+#carousel #carouselExampleIndicators img {
+  margin: auto;
+  width: 100%;
+  height: 80%;
+  max-height: 300px;
+}
