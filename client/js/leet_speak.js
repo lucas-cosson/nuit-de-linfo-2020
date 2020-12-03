@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (leetSpeakData.activated) {
       leetSpeakData.activated = false;
       document.body.innerHTML = leetSpeakData.html;
+      document
+        .getElementById("leet-speak")
+        .addEventListener("click", leetSpeak);
       return;
     }
 
