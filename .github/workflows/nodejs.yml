@@ -5,28 +5,15 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-20.04
-
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [ubuntu-20.04]
     steps:
       - uses: actions/checkout@v1
-
-      - name: Copy content
-        uses: appleboy/scp-action@master
-        env:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSHKEY }}
-        with:
-          source: "."
-          target: "/home/pireteamrevolution/html"
-
-      - name: Copy content
-        uses: appleboy/scp-action@master
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSHKEY }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           script: ls
