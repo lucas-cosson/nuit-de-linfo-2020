@@ -46,6 +46,29 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*
+  Logos
+*/
+#ndli_img{
+  position: absolute;
+  background-color: #121b6b;
+  right: 8%;
+  top: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+#surfrider_img{
+  position: absolute;
+  background-color: #0073be;
+  left: 8%;
+  top: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
 
 /*
   FORMULAIRE
