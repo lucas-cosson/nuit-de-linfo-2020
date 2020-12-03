@@ -19,7 +19,8 @@
   "homepage": "https://github.com/lucas-cosson/nuit-de-linfo-2020#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mariadb": "^2.5.1"
   },
   "devDependencies": {
     "eslint": "^7.14.0",

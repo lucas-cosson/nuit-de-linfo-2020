@@ -12,6 +12,10 @@
     <aside id=formulaire>
       <h2>Où avez vous ride ?</h2>
       <div>
+        <label for="lieu">Nom du waterman :</label>
+        <input type="input" id="waterman">
+      </div>
+      <div>
         <label for="lieu">Lieu :</label>
         <input type="input" id="lieu">
       </div>
@@ -25,9 +29,11 @@
       </div>
       <div>
         <label for="polution">Polution visible :</label>
+        <p id="polution-value">50%</p>
         <input type="range" id="polution">
       </div>
       <input type="button" value="Envoyer" id="submit-data">
     </aside>
+    <script src="./js/index.js"></script>
   </body>
 </html>
