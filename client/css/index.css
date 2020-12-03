@@ -47,6 +47,11 @@ table {
 	border-spacing: 0;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: lightblue;
+}
+
 /*
   FORMULAIRE
 */
@@ -54,13 +59,28 @@ table {
 #formulaire {
   position: absolute;
   right: 0; top: 30vh;
-  display: block;
-  background-color: black;
+  padding: 10px;
+  color: black;
+  background-color: white;
   width: 300px;
+  border-radius: 10px 0 0 10px;
 }
 
 #formulaire > h2 {
-  color: white;
+  font-size: large;
   text-align: center;
-  margin-top: 20px;
+  margin: 20px 0;
+}
+
+#formulaire > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0 15px 0;
+}
+
+#formulaire > input {
+  display: block;
+  margin: 0 auto;
 }
