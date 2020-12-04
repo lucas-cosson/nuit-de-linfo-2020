@@ -710,4 +710,26 @@ ul.premier a {
   left: 20%;
   right: 20%;
 }
-/************************************/
+/************** Changement de view ****************/
+.view {
+  display: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+.view.display-view {
+  display: block;
+}
+
+nav ul li,
+nav ul li ul li {
+  cursor: pointer;
+  padding-bottom: 1em;
+}
+
+.view form {
+  text-align: center;
+  margin: auto;
+  padding: 2em;
+}
