@@ -21,24 +21,24 @@
       rel="stylesheet"
     />
     <title>La nuit de l'info 2020</title>
-    <script src="js/index.js" defer></script>
+    <script src="js/index.js"></script>
     <script src="js/leet_speak.js"></script>
+    <script src="js/user.js"></script>
   </head>
   <body>
     <button id="darkmode">Dark mode</button>
     <nav id="unroll">
       <ul class="premier" id="gauche">
-        <li>
-          <ul class="second">
-            <li></li>
-            <li></li>
+        <li>Gestion de compte
+          <ul class="premier">
+            <li>Inscription</li>
+            <li>Connexion</li>
           </ul>
         </li>
         <li>
-          Les plages en live
+        Après-session
           <ul class="second">
-            <li></li>
-            <li></li>
+            <li>Formulaire</li>
           </ul>
         </li>
       </ul>
@@ -82,15 +82,18 @@
         </li>
       </ul>
     </nav>
+    <aside id=weather-api>
+      <h2>Il fait chaud, il fait beau ?</h2>
+      <p id="ville"></p>
+      <div id="weather-api-data">
+
+      </div>
+    </aside>
+    <div class="loader">
+      <div class="animation-area">
+      <img src="img/final_loader.gif"/>
 
     <div id="main-view" class="view display-view">
-      <aside id="formulaire">
-        <h2>Où avez vous ride ?</h2>
-        <label for="lieu"></label>
-        <input type="input" name="" id="lieu" />
-        <input type="checkbox" name="" id="" />
-        <input type="checkbox" name="" id="" />
-      </aside>
       <div class="loader">
         <div class="animation-area">
           <img src="img/final_loader.gif" />
@@ -103,6 +106,7 @@
           <li></li>
           <li></li>
         </ul>
+
       </div>
 
       <h1>Surfpwaves</h1>
@@ -249,7 +253,7 @@
         <div id="surf"><span></span></div>
       </main>
 
-      <div id="formulaire">
+      <div id="formulaire" class="view">
         <h2>Où avez vous ride ?</h2>
         <div>
           <label for="waterman">Nom du waterman :</label>
@@ -275,21 +279,27 @@
         <input type="button" value="Envoyer" id="submit-data" />
       </div>
     </div>
-    <div id="login-view" class="view">
-      <form>
-        <input type="text" name="lo" id="" />
-        <input type="password" name="" id="" />
 
-        <button>Se connecter</button>
+    <div id="connect-view" class="view">
+      <form>
+        <input type="text" name="co_name" id="co_name" />
+        <input type="password" name="co_password" id="co_password" />
+
+        <button id="submit-connect">Se connecter</button>
       </form>
     </div>
+
     <div id="register-view" class="view">
       <form>
-        <input type="text" name="" id="" />
-        <input type="password" name="" id="" />
+        <input type="text" name="re_name" id="re_name" />
+        <input type="password" name="re_password" id="re_password" />
 
-        <button>S'inscrire</button>
+        <button id="submit-register">S'inscrire</button>
       </form>
+    </div>
+
+    <div id="account-view" class="view">
+      <h2>Votre compte</h2>
     </div>
 
     <footer>

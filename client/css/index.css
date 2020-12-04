@@ -481,15 +481,14 @@ ul.premier a {
 }
 
 #formulaire {
-  position: absolute;
-
+  display: none;
+  margin: 0 auto 0 auto;
   padding: 10px;
   color: black;
   width: 300px;
   border-radius: 10px 0 0 10px;
   left: 0;
   background-color: gray;
-  top: 20%;
   font-size: small;
 }
 
@@ -516,6 +515,22 @@ ul.premier a {
 #formulaire #submit-data {
   margin: 0 auto;
   float: none;
+}
+
+#weather-api {
+  background-color: lightblue;
+  width: 250px;
+  height: auto;
+}
+
+#weather-api > h2 {
+  background-color: white;
+  font-size: small;
+}
+
+#weather-api img {
+  width: 50px;
+  height: 50px;
 }
 
 /* EASTER EGG */
@@ -710,6 +725,7 @@ ul.premier a {
   left: 20%;
   right: 20%;
 }
+
 /************************************/
 
 #darkmode {
@@ -721,4 +737,27 @@ ul.premier a {
   color: white;
   border-radius: 10px;
   z-index: 100;
+
+.view {
+  display: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+.view.display-view {
+  display: block;
+}
+
+nav ul li,
+nav ul li ul li {
+  cursor: pointer;
+  padding-bottom: 1em;
+}
+
+.view form {
+  text-align: center;
+  margin: auto;
+  padding: 2em;
+
 }
