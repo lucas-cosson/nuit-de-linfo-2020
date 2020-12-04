@@ -726,3 +726,14 @@ ul.premier a {
   right: 20%;
 }
 /************************************/
+
+.view {
+  display: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+.view.display-view {
+  display: block;
+}

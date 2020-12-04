@@ -21,8 +21,9 @@
       rel="stylesheet"
     />
     <title>La nuit de l'info 2020</title>
-    <script src="js/index.js" defer></script>
+    <script src="js/index.js"></script>
     <script src="js/leet_speak.js"></script>
+    <script src="js/user.js"></script>
   </head>
   <body>
     <nav id="unroll">
@@ -285,21 +286,27 @@
         <input type="button" value="Envoyer" id="submit-data" />
       </div>
     </div>
-    <div id="login-view" class="view">
-      <form>
-        <input type="text" name="lo" id="" />
-        <input type="password" name="" id="" />
 
-        <button>Se connecter</button>
+    <div id="connect-view" class="view">
+      <form>
+        <input type="text" name="co_name" id="co_name" />
+        <input type="password" name="co_password" id="co_password" />
+
+        <button id="submit-connect">Se connecter</button>
       </form>
     </div>
+
     <div id="register-view" class="view">
       <form>
-        <input type="text" name="" id="" />
-        <input type="password" name="" id="" />
+        <input type="text" name="re_name" id="re_name" />
+        <input type="password" name="re_password" id="re_password" />
 
-        <button>S'inscrire</button>
+        <button id="submit-register">S'inscrire</button>
       </form>
+    </div>
+
+    <div id="account-view" class="view">
+      <h2>Votre compte</h2>
     </div>
 
     <footer>
