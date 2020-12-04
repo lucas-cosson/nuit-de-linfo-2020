@@ -398,11 +398,6 @@ main #surf > span::before {
   FORMULAIRE
 */
 
-/*pour mes petits yeux*/
-html{
-	background-color: darkslateblue;
-}
-
 
 nav#unroll{
 	display: flex;
