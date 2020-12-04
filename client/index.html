@@ -4,6 +4,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -18,7 +20,6 @@
     <script src="js/leet_speak.js"></script>
   </head>
   <body>
-
     <h1>Surfpwaves</h1>
     <button id="leet-speak">On 3st d3s h4ck3rs</button>
     <main>
@@ -88,7 +89,36 @@
       <div id="parasol"><span></span></div>
       <div id="surf"><span></span></div>
     </main>
-    <footer></footer>
+  
+    <aside id=formulaire>
+      <h2>Où avez vous ride ?</h2>
+      <div>
+        <label for="lieu">Nom du waterman :</label>
+        <input type="input" id="waterman">
+      </div>
+      <div>
+        <label for="lieu">Lieu :</label>
+        <input type="input" id="lieu">
+      </div>
+      <div>
+        <label for="">Date de session :</label>
+        <input type="date" id="date-session">
+      </div>
+      <div>
+        <label for="">Durée de session :</label>
+        <input type="time" id="time" value="00:00">
+      </div>
+      <div>
+        <label for="polution">Polution visible :</label>
+        <p id="polution-value">50%</p>
+        <input type="range" id="polution">
+      </div>
+      <input type="button" value="Envoyer" id="submit-data">
+    </aside>
+    <footer>
+      <a id="ndli_img" href="https://www.nuitdelinfo.com"><img src="img/ndli.png" width="100" height="100" alt="Logo Nuit de l'Info"></a>
+      <a id="surfrider_img" href="https://surfrider.eu/"><img src="https://surfrider.eu/img/logo.svg?c=3" width="100" height="100" alt="Logo surfrider"></a>
+    </footer>
   </body>
   
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -105,16 +135,7 @@
           crossorigin="anonymous">
           </script>
 
-    <a id="ndli_img" href="https://www.nuitdelinfo.com"><img src="img/ndli.png" width="100" height="100" alt="Logo Nuit de l'Info"></a>
-    <a id="surfrider_img" href="https://surfrider.eu/"><img src="https://surfrider.eu/img/logo.svg?c=3" width="100" height="100" alt="Logo surfrider"></a>
-    <aside id=formulaire>
-      <h2>Où avez vous ride ?</h2>
-      <label for="lieu"></label>
-      <input type="input" name="" id="lieu">
-      <input type="checkbox" name="" id="">
-      <input type="checkbox" name="" id="">
-    </aside>
+
+    <script src="./js/index.js"></script>
   </body>
-
-
 </html>
