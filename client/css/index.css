@@ -57,19 +57,18 @@ body {
 */
 
 #formulaire {
-  position: absolute;
-  right: 0; top: 30vh;
-  padding: 10px;
-  color: black;
-  background-color: white;
-  width: 300px;
-  border-radius: 10px 0 0 10px;
+	color: white;
+	padding: 20px;
+	margin: 30vh auto 0 auto;
+  background-color: gray;
+	box-shadow: 5px;
+	width: 50vw;
+	border-radius: 10px;
 }
 
 #formulaire > h2 {
-  font-size: large;
+	font-size: larger;
   text-align: center;
-  margin: 20px 0;
 }
 
 #formulaire > div {
@@ -81,7 +80,9 @@ body {
 }
 
 #formulaire > input {
+	padding: 20px;
+	font-size: larger;
   display: block;
-  margin: 0 auto;
+  margin: 60px auto 0 auto;
   border-radius: 20px;
 }

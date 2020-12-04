@@ -9,15 +9,15 @@
     <title>La nuit de l'info 2020</title>
   </head>
   <body>
-    <aside id=formulaire>
+    <div id="formulaire">
       <h2>Où avez vous ride ?</h2>
       <div>
-        <label for="lieu">Nom du waterman :</label>
-        <input type="input" id="waterman">
+        <label for="waterman">Nom du waterman :</label>
+        <input type="text" id="waterman">
       </div>
       <div>
         <label for="lieu">Lieu :</label>
-        <input type="input" id="lieu">
+        <input type="text" id="lieu">
       </div>
       <div>
         <label for="">Date de session :</label>
@@ -28,12 +28,12 @@
         <input type="time" id="time" value="00:00">
       </div>
       <div>
-        <label for="polution">Polution visible :</label>
-        <p id="polution-value">50%</p>
-        <input type="range" id="polution">
+        <label for="pollution">Pollution visible :</label>
+        <p id="pollution-value">50%</p>
+        <input type="range" id="pollution">
       </div>
       <input type="button" value="Envoyer" id="submit-data">
-    </aside>
+    </div>
     <script src="./js/index.js"></script>
   </body>
 </html>
