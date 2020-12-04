@@ -556,7 +556,7 @@ table {
 	left: 42%;
 	width: 150px;
 	height: 150px;
-	animation-delay: 0s;
+	animation-delay: 3s;
 	animation-duration: 15s;
 }
 .box-area li:nth-child(5) {
