@@ -369,6 +369,7 @@ main #surf > span::before {
   max-height: 300px;
 }
 
+
 /*
   Logos
 */
@@ -397,19 +398,291 @@ main #surf > span::before {
   FORMULAIRE
 */
 
+/*pour mes petits yeux*/
+html{
+	background-color: darkslateblue;
+}
+
+
+nav#unroll{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	position: relative;
+	align-items: center;
+}
+
+video#autoplay{
+    border-radius: 50%; 
+	overflow: hidden;
+	position: relative; 	
+    width: 200px;
+	height: 200px;
+	top: -100px;
+    transition: top ease-out .5s;
+}
+video#autoplay:hover{
+    top: 0px;
+}
+
+
+ul.premier{
+	visibility: hidden;
+}
+ul.premier.enBas{
+    visibility: visible;
+}
+
+ul.premier{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.premier > li{
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 150px;
+    background: #999999;
+}
+ul.premier > li:hover{
+	background: #CCCCCC;
+}
+ul.premier li:hover > ul{
+    display: inline;
+}
+ul.premier a{
+	color: black;
+	text-decoration: none;
+	padding: 0 0 0 10px;
+	display: block;
+	line-height: 30px;;
+}
+
+.second{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.second > li{
+    position: relative;
+    height: 30px;
+    background: #999999;
+}
+.second > li:hover{
+	background: #CCCCCC;
+}
+
 #formulaire {
   position: absolute;
-  right: 0;
-  top: 30vh;
-  display: block;
-  background-color: black;
+
+  padding: 10px;
+  color: black;
   width: 300px;
+  border-radius: 10px 0 0 10px;
+  left: 0;
+  background-color: gray;
+  top: 20%;
+  font-size: small;
 }
 
 #formulaire > h2 {
-  color: white;
+	font-size: larger;
   text-align: center;
-  margin-top: 20px;
+}
+
+#formulaire > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0 15px 0;
+}
+
+#formulaire input {
+  display: block;
+  float: right;
+  border-radius: 20px;
+  max-width: 50%;
+}
+
+#formulaire #submit-data {
+  margin: 0 auto;
+  float: none;
+}
+
+/* EASTER EGG */
+
+#leet-speak .hidden {
+  display: none;
+}
+
+#leet-speak > div {
+  display: block;
+  background-color: black;
+  color: green;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  left: 45%;
+  z-index: 1000;
+  width: 300px;
+  padding: 1em;
+}
+
+#leet-speak > div button {
+  margin: auto;
+  margin-top: 1em;
+}
+
+#easterEgg .hidden {
+  display: none;
+}
+
+#easterEgg div {
+  text-align: center;
+  display: block;
+  position: absolute;
+  background-color: black;
+  color: green;
+  top: 45%;
+  left: 45%;
+  z-index: 1000;
+}
+
+#easterEgg div button {
+  margin: 1em;
+  background-color: transparent;
+  border: none;
+}
+
+#easterEgg div button::before {
+  padding-left: 1.5em;
+  background-color: blue;
+  content: "";
+  border-radius: 80% 0% 0% 80%;
+}
+
+#easterEgg div button::after {
+  padding-left: 1.5em;
+  background-color: white;
+  content: "";
+  border-radius: 0% 80% 80% 0%;
+}
+
+#easterEgg div button:last-of-type:before {
+  background-color: red;
+}
+
+.loader {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader .animation-area > img {
+  width: 500px;
+  margin-left: 33%;
+  margin-top: 5%;
+}
+
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+.animation-area {
+	background: linear-gradient(to left, #4c67c0, #5da0cc);
+	width: 100%;
+	height: 100vh;
+}
+.box-area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box-area li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+	animation: animate 20s linear infinite;
+	bottom: -150px;
+}
+.box-area li:nth-child(1) {
+	left: 86%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(2) {
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box-area li:nth-child(3) {
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 3s;
+	animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
 }
 
 .view {
@@ -422,3 +695,4 @@ main #surf > span::before {
 .view.display-view {
   display: block;
 }
+
