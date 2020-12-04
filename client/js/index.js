@@ -25,6 +25,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const time = document.getElementById("time");
   const pollution = document.getElementById("pollution");
   const pollution_value = document.getElementById("pollution-value");
+  
+document.addEventListener("DOMContentLoaded", function() {
+    let video=document.getElementById('autoplay');
+    let root=document.getElementsByClassName('premier');
+    let i = root.length;
+    video.addEventListener("mouseover", function(){
+        video.play();
+        let j=i;
+        while(j--){
+            root[j].className += ' enBas';
+        }
+    });
+
+    let nav=document.getElementById('unroll');
+    nav.addEventListener("onmouseout", function(){
+        video.pause();
+        let j=i;
+        while(j--){
+            root[j].classList.remove('enBas');
+        }
+    });
+
+    const waterman = document.getElementById("waterman");
+    const lieu = document.getElementById("lieu");
+    const date_session = document.getElementById("date-session");
+    const time = document.getElementById("time");
+    const pollution = document.getElementById("pollution");
+    const pollution_value = document.getElementById("pollution-value");
 
   pollution.addEventListener(
     "input",
@@ -60,6 +88,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }),
       headers: { "Content-Type": "application/json" },
     };
+    });
+
+document.getElementById("submit-data").addEventListener("click", async () => {
+    if(waterman.value === "neo" || waterman.value === "Neo"){
+        document.getElementById("easterEgg").children[0].classList.remove("hidden");
+        waterman.value = "";
+        return;
+    }
+    const init = {
+    method: "POST",
+    body: JSON.stringify({
+      waterman: waterman.value,
+      lieu: lieu.value,
+      date_session: date_session.value,
+      time: time.value,
+      pollution: pollution.value,
+    }),
+    headers: { "Content-Type": "application/json" },
+  };
 
     await fetch(`/api/form/insert`, init);
   });
