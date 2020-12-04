@@ -1,5 +1,5 @@
 async function getApi() {
-    const response = await fetch("http://newsapi.org/v2/everything?q=surf&from=2020-11-04&sortBy=publishedAt&apiKey=455ef94368134ee2973fa2318de6b270");
+    let response = await fetch("http://newsapi.org/v2/everything?q=surf&from=2020-11-04&sortBy=publishedAt&apiKey=455ef94368134ee2973fa2318de6b270");
     response =  await response.json();
     if(response.status == "ok"){
         console.log("réponse");
@@ -26,3 +26,46 @@ async function getApi() {
 }
 
 getApi();
+
+
+const waterman = document.getElementById("waterman");
+const lieu = document.getElementById("lieu");
+const date_session = document.getElementById("date-session");
+const time = document.getElementById("time");
+const polution = document.getElementById("polution");
+const polution_value = document.getElementById("polution-value");
+
+polution.addEventListener(
+  "input",
+  () => {
+    polution_value.innerHTML = `${polution.value}%`;
+  },
+  false
+);
+
+document.getElementById("submit-data").addEventListener("click", async () => {
+    if(waterman.value === "néo" || waterman.value === "Néo"){
+        console.log("bonjour néo");
+        document.getElementById("easterEgg").children[0].classList.remove("hidden");
+    }
+    const init = {
+    method: "GET",
+    body: JSON.stringify({
+      waterman: waterman.value,
+      lieu: lieu.value,
+      date_session: date_session.value,
+      time: time.value,
+      polution: polution.value,
+    }),
+    headers: { "Content-Type": "application/json" },
+  };
+  const response = await fetch(`/database/`, init);
+});
+
+// EASTER EGG
+document.getElementById("easterEgg").addEventListener("click", () => {
+    document.getElementById("easterEgg").children[0].classList.add("hidden");
+});
+document.getElementById("easterEgg").querySelector("button:nth-of-type(2)").addEventListener("click", () => {
+    document.getElementById("leet-speak").children[0].classList.remove("hidden");
+});
