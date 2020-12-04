@@ -1,102 +1,153 @@
+document.addEventListener("DOMContentLoaded", function () {
+  let video = document.getElementById("autoplay");
+  let root = document.getElementsByClassName("premier");
+  let i = root.length;
+  video.addEventListener("mouseover", function () {
+    video.play();
+    let j = i;
+    while (j--) {
+      root[j].className += " enBas";
+    }
+  });
 
-document.addEventListener("DOMContentLoaded", function() {
-    let video=document.getElementById('autoplay');
-    let root=document.getElementsByClassName('premier');
-    let i = root.length;
-    video.addEventListener("mouseover", function(){
-        video.play();
-        let j=i;
-        while(j--){
-            root[j].className += ' enBas';
+  let nav = document.getElementById("unroll");
+  nav.addEventListener("onmouseout", function () {
+    video.pause();
+    let j = i;
+    while (j--) {
+      root[j].classList.remove("enBas");
+    }
+  });
+
+  async function getApi() {
+    let response = await fetch(
+      "http://newsapi.org/v2/everything?q=surf&from=2020-11-04&sortBy=publishedAt&apiKey=455ef94368134ee2973fa2318de6b270"
+    );
+    response = await response.json();
+    if (response.status == "ok") {
+      console.log("réponse");
+      for (let index = 0; index < 4; ++index) {
+        let carousel = document.getElementsByClassName("carousel-item")[i];
+        let html = "";
+        if (index === 0) {
+          html += '<div class="carousel-item active">';
         }
-    });
-
-    let nav=document.getElementById('unroll');
-    nav.addEventListener("onmouseout", function(){
-        video.pause();
-        let j=i;
-        while(j--){
-            root[j].classList.remove('enBas');
-        }
-    });
-
-    async function getApi() {
-        let response = await fetch("http://newsapi.org/v2/everything?q=surf&from=2020-11-04&sortBy=publishedAt&apiKey=455ef94368134ee2973fa2318de6b270");
-        response =  await response.json();
-        if(response.status == "ok"){
-            console.log("réponse");
-            for (let index = 0; index < 4; ++index) {
-            let carousel = document.getElementsByClassName("carousel-item")[i];
-            let html = '';
-            if(index === 0){
-                html += '<div class="carousel-item active">';
-            }
-            html += `<div class="carousel-item"><a href="${res.article[i].url}">
+        html += `<div class="carousel-item"><a href="${res.article[i].url}">
                         <img src="${res.article[i].urlToImage}"
                             alt="lien vers l'article"
                             onError="this.onerror=null;this.src='./img/default.jpg';">
                     </a></div>`;
-            if(index === 0){
-                html += '</div>';
-            }
-            carousel.insertAdjacentHTML("beforeend", html);
-            }
-        } else {
-            console.log("FAIL");
+        if (index === 0) {
+          html += "</div>";
         }
-
+        carousel.insertAdjacentHTML("beforeend", html);
+      }
+    } else {
+      console.log("FAIL");
     }
+  }
 
-    const waterman = document.getElementById("waterman");
-    const lieu = document.getElementById("lieu");
-    const date_session = document.getElementById("date-session");
-    const time = document.getElementById("time");
-    const pollution = document.getElementById("pollution");
-    const pollution_value = document.getElementById("pollution-value");
+  const waterman = document.getElementById("waterman");
+  const lieu = document.getElementById("lieu");
+  const date_session = document.getElementById("date-session");
+  const time = document.getElementById("time");
+  const pollution = document.getElementById("pollution");
+  const pollution_value = document.getElementById("pollution-value");
 
-    pollution.addEventListener(
+  pollution.addEventListener(
     "input",
     () => {
-        pollution_value.innerHTML = `${pollution.value}%`;
+      pollution_value.innerHTML = `${pollution.value}%`;
     },
     false
-    );
+  );
 
-    window.addEventListener ("load", function(){
+  window.addEventListener("load", function () {
     const loader = document.querySelector(".loader");
     setTimeout(suiteTraitement, 5000);
-    function suiteTraitement()
-    {
-    loader.className+=" hidden";
+    function suiteTraitement() {
+      loader.className += " hidden";
     }
+  });
 
-    });
-
-    document.getElementById("submit-data").addEventListener("click", async () => {
-        if(waterman.value === "néo" || waterman.value === "Néo"){
-            console.log("bonjour néo");
-            document.getElementById("easterEgg").children[0].classList.remove("hidden");
-        }
-        const init = {
-        method: "POST",
-        body: JSON.stringify({
+  document.getElementById("submit-data").addEventListener("click", async () => {
+    if (waterman.value === "néo" || waterman.value === "Néo") {
+      console.log("bonjour néo");
+      document
+        .getElementById("easterEgg")
+        .children[0].classList.remove("hidden");
+    }
+    const init = {
+      method: "POST",
+      body: JSON.stringify({
         waterman: waterman.value,
         lieu: lieu.value,
         date_session: date_session.value,
         time: time.value,
         pollution: pollution.value,
-        }),
-        headers: { "Content-Type": "application/json" },
+      }),
+      headers: { "Content-Type": "application/json" },
     };
 
     await fetch(`/api/form/insert`, init);
+  });
+
+  // EASTER EGG
+  document.getElementById("easterEgg").addEventListener("click", () => {
+    document.getElementById("easterEgg").children[0].classList.add("hidden");
+  });
+  document
+    .getElementById("easterEgg")
+    .querySelector("button:nth-of-type(2)")
+    .addEventListener("click", () => {
+      document
+        .getElementById("leet-speak")
+        .children[0].classList.remove("hidden");
     });
 
-    // EASTER EGG
-    document.getElementById("easterEgg").addEventListener("click", () => {
-        document.getElementById("easterEgg").children[0].classList.add("hidden");
-    });
-    document.getElementById("easterEgg").querySelector("button:nth-of-type(2)").addEventListener("click", () => {
-        document.getElementById("leet-speak").children[0].classList.remove("hidden");
-    });
+  /* WEATHER API */
+  const ville = document.getElementById("ville");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          var crd = pos.coords;
+          const proxyurl = "https://cors-anywhere.herokuapp.com/";
+          let url = `https://www.metaweather.com/api/location/search/?lattlong=${crd.latitude},${crd.longitude}`;
+          let response = await fetch(proxyurl + url);
+
+          response = await response.json();
+          ville.innerHTML = `Ville : ${response[0].title}`;
+
+          url = `https://www.metaweather.com/api/location/${
+            response[0].woeid
+          }${today()}`;
+
+          response = await fetch(proxyurl + url);
+          response = await response.json();
+          console.log(response);
+          const weather_api = document.getElementById("weather-api-data");
+          for (let i = 0; i < 2; i++) {
+            weather_api.innerHTML += `<img src="../img/weather/${response[i].weather_state_abbr}.svg" alt="${response[i].weather_state_abbr}"><p>Température : ${response[i].the_temp}C°<p>`;
+          }
+        },
+        (err) => {
+          console.error(err);
+        }
+      );
+    } else {
+      ville.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function today() {
+    let today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    return `/${yyyy}/${mm}/${dd}/`;
+  }
+
+  getLocation();
 });
