@@ -13,6 +13,16 @@ polution.addEventListener(
   false
 );
 
+window.addEventListener ("load", function(){
+  const loader = document.querySelector(".loader");
+  setTimeout(suiteTraitement, 5000);
+  function suiteTraitement()
+{
+  loader.className+=" hidden";
+}
+
+});
+
 document.getElementById("submit-data").addEventListener("click", async () => {
   const init = {
     method: "GET",
