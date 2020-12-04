@@ -1,4 +1,3 @@
-
 /* -------------------- Reset CSS -------------------- */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -370,58 +369,11 @@ main #surf > span::before {
   max-height: 300px;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 /*
   Logos
 */
-#ndli_img{
+#ndli_img {
   position: absolute;
   background-color: #121b6b;
   right: 8%;
@@ -431,7 +383,7 @@ table {
   padding-bottom: 20px;
   padding-top: 30px;
 }
-#surfrider_img{
+#surfrider_img {
   position: absolute;
   background-color: #0073be;
   left: 8%;
@@ -447,14 +399,16 @@ table {
 */
 
 #formulaire {
-	display: none;
-	color: white;
-	padding: 20px;
-	margin: 30vh auto 0 auto;
+  position: absolute;
+
+  padding: 10px;
+  color: black;
+  width: 300px;
+  border-radius: 10px 0 0 10px;
+  left: 0;
   background-color: gray;
-	box-shadow: 5px;
-	width: 50vw;
-	border-radius: 10px;
+  top: 20%;
+  font-size: small;
 }
 
 #formulaire > h2 {
@@ -470,12 +424,79 @@ table {
   margin: 15px 0 15px 0;
 }
 
-#formulaire > input {
-	padding: 20px;
-	font-size: larger;
+#formulaire input {
   display: block;
-  margin: 60px auto 0 auto;
+  float: right;
   border-radius: 20px;
+  max-width: 50%;
+}
+
+#formulaire #submit-data {
+  margin: 0 auto;
+  float: none;
+}
+
+/* EASTER EGG */
+
+#leet-speak .hidden {
+  display: none;
+}
+
+#leet-speak > div {
+  display: block;
+  background-color: black;
+  color: green;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  left: 45%;
+  z-index: 1000;
+  width: 300px;
+  padding: 1em;
+}
+
+#leet-speak > div button {
+  margin: auto;
+  margin-top: 1em;
+}
+
+#easterEgg .hidden {
+  display: none;
+}
+
+#easterEgg div {
+  text-align: center;
+  display: block;
+  position: absolute;
+  background-color: black;
+  color: green;
+  top: 45%;
+  left: 45%;
+  z-index: 1000;
+}
+
+#easterEgg div button {
+  margin: 1em;
+  background-color: transparent;
+  border: none;
+}
+
+#easterEgg div button::before {
+  padding-left: 1.5em;
+  background-color: blue;
+  content: "";
+  border-radius: 80% 0% 0% 80%;
+}
+
+#easterEgg div button::after {
+  padding-left: 1.5em;
+  background-color: white;
+  content: "";
+  border-radius: 0% 80% 80% 0%;
+}
+
+#easterEgg div button:last-of-type:before {
+  background-color: red;
 }
 
 .loader {
