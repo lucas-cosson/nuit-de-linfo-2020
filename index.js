@@ -16,6 +16,15 @@ app.get("index.html", (_, res) => {
 });
 
 app.post("/api/user/register", (req, res) => {
+  if (!req.body.user || !req.body.password) {
+    console.log("erreur");
+    res.send({
+      answer: false,
+      message: "Vous devez saisir un nom d'utilisateur et un mot de passe.",
+    });
+    return;
+  }
+
   const connection = mysql.createConnection({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "",
@@ -35,7 +44,10 @@ app.post("/api/user/register", (req, res) => {
     }
   );
 
-  res.end("Nouvel utilisateur");
+  console.log("ok");
+  res.send({
+    answer: true,
+  });
 });
 
 app.post("/api/user/connect", (req, res) => {
@@ -55,14 +67,30 @@ app.post("/api/user/connect", (req, res) => {
     `SELECT us_password FROM user WHERE us_name='${user}'`,
     (error, result) => {
       if (error) throw err;
-      if (result === []) return;
+      if (result === []) {
+        res.send({
+          answer: false,
+          message: "Mauvais mot de passe ou utilisateur.",
+        });
+        console.log("error");
+        return;
+      }
 
       password = result[0].us_password;
       const auth = bcryptjs.compareSync(req.body.password, password);
 
       if (auth) {
-        res.end("Connecté");
-        console.log("connecté");
+        res.send({
+          answer: true,
+        });
+        console.log("ok");
+      } else {
+        console.log("error 2");
+        res.send({
+          answer: false,
+          message: "Mauvais mot de passe ou utilisateur.",
+        });
+        return;
       }
     }
   );

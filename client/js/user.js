@@ -15,6 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
+      }).then((response) => {
+        response.json().then((data) => {
+          if (data.answer) {
+            document
+              .getElementById("main-view")
+              .classList.toggle("display-view");
+            document
+              .getElementById("register-view")
+              .classList.toggle("display-view");
+          } else {
+            alert(data.message);
+          }
+        });
       });
     });
 
@@ -32,6 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
+    }).then((response) => {
+      response.json().then((data) => {
+        if (data.answer) {
+          document.getElementById("main-view").classList.toggle("display-view");
+          document
+            .getElementById("connect-view")
+            .classList.toggle("display-view");
+        } else {
+          alert(data.message);
+        }
+      });
     });
   });
 });
