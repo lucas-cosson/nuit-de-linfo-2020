@@ -10,24 +10,33 @@ app.get("index.html", (_, res) => {
   res.sendFile("client/index.html");
 });
 
-app.get("/database", (req, res) => {
-  console.log("Reçu : GET /database/");
+app.post("/api/form/insert", async (req, res) => {
+  console.log("Reçu : POST /database/");
   res.setHeader("Content-type", "application/json");
-
-  const connection = mariadb
-    .createConnection({
+  let connection = null;
+  try {
+    connection = await mariadb.createConnection({
+      port: 3306,
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       database: process.env.DB_DATABASE,
       password: process.env.DB_PWD,
-    })
-    .then((conn) => {
-      console.log("connected ! connection id is " + conn.threadId);
-    })
-    .catch((err) => {
-      console.log("not connected due to error: " + err);
     });
+  } catch (error) {
+    console.error(error);
+  }
 
+  console.log(req.body);
+  /*
+  connection
+    .query("INSERT INTO data VALUES (?, ?, ?)", [
+      1,
+      Buffer.from("c327a97374", "hex"),
+      "mariadb",
+    ])
+    .then()
+    .catch();
+  */
   connection
     .end()
     .then(() => {

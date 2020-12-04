@@ -15,7 +15,7 @@ polution.addEventListener(
 
 document.getElementById("submit-data").addEventListener("click", async () => {
   const init = {
-    method: "GET",
+    method: "POST",
     body: JSON.stringify({
       waterman: waterman.value,
       lieu: lieu.value,
@@ -25,5 +25,6 @@ document.getElementById("submit-data").addEventListener("click", async () => {
     }),
     headers: { "Content-Type": "application/json" },
   };
-  const response = await fetch(`/database/`, init);
+
+  const response = await fetch(`/api/form/insert`, init);
 });
