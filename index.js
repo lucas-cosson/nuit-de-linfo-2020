@@ -4,14 +4,19 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const mysql = require("mysql");
+const bodyParser = require("body-parser");
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("client"));
 
 app.get("index.html", (_, res) => {
   res.sendFile("client/index.html");
 });
 
-app.get("/api/user/connect", (_, res) => {
+app.post("/api/user/register", (req, res) => {
+  console.log("hey");
+
   const connection = mysql.createConnection({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "",
@@ -19,16 +24,20 @@ app.get("/api/user/connect", (_, res) => {
     database: process.env.DB_DATABASE || "",
   });
 
-  console.log(connection);
-
   connection.connect();
 
-  connection.query("SELECT * FROM user", (err, res, fields) => {
-    if (err) throw err;
-    console.log(res, fields);
-  });
+  const user = req.body.user;
+  const password = req.body.password;
 
-  res.json("Coucou");
+  connection.query(
+    `INSERT INTO user (us_name, us_password) VALUES ('${user}', '${password}')`,
+    (err, res) => {
+      if (err) throw err;
+      console.log(res);
+    }
+  );
+
+  res.status(200);
 });
 
 app.listen(port, () => {
