@@ -1,3 +1,25 @@
+
+document.addEventListener("DOMContentLoaded", function() {
+    let video=document.getElementById('autoplay');
+    let root=document.getElementsByClassName('premier');
+    let i = root.length;
+    video.addEventListener("mouseover", function(){
+        video.play();
+        let j=i;
+        while(j--){
+            root[j].className += ' enBas';
+        }
+    });
+
+    let nav=document.getElementById('unroll');
+    nav.addEventListener("onmouseout", function(){
+        video.pause();
+        let j=i;
+        while(j--){
+            root[j].classList.remove('enBas');
+        }
+    });
+
 async function getApi() {
     let response = await fetch("http://newsapi.org/v2/everything?q=surf&from=2020-11-04&sortBy=publishedAt&apiKey=455ef94368134ee2973fa2318de6b270");
     response =  await response.json();
@@ -24,9 +46,6 @@ async function getApi() {
     }
 
 }
-
-getApi();
-
 
 const waterman = document.getElementById("waterman");
 const lieu = document.getElementById("lieu");

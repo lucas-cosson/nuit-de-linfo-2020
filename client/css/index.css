@@ -398,6 +398,86 @@ main #surf > span::before {
   FORMULAIRE
 */
 
+/*pour mes petits yeux*/
+html{
+	background-color: darkslateblue;
+}
+
+
+nav#unroll{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	position: relative;
+	align-items: center;
+}
+
+video#autoplay{
+    border-radius: 50%; 
+	overflow: hidden;
+	position: relative; 	
+    width: 200px;
+	height: 200px;
+	top: -100px;
+    transition: top ease-out .5s;
+}
+video#autoplay:hover{
+    top: 0px;
+}
+
+
+ul.premier{
+	visibility: hidden;
+}
+ul.premier.enBas{
+    visibility: visible;
+}
+
+ul.premier{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.premier > li{
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 150px;
+    background: #999999;
+}
+ul.premier > li:hover{
+	background: #CCCCCC;
+}
+ul.premier li:hover > ul{
+    display: inline;
+}
+ul.premier a{
+	color: black;
+	text-decoration: none;
+	padding: 0 0 0 10px;
+	display: block;
+	line-height: 30px;;
+}
+
+.second{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.second > li{
+    position: relative;
+    height: 30px;
+    background: #999999;
+}
+.second > li:hover{
+	background: #CCCCCC;
+}
+
 #formulaire {
   position: absolute;
 

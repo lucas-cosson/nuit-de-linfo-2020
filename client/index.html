@@ -20,6 +20,51 @@
     <script src="js/leet_speak.js"></script>
   </head>
   <body>
+    <nav id="unroll">
+      <ul class="premier" id="gauche">
+        <li>
+          <ul class="second">
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          Les plages en live
+          <ul class="second">
+            <li></li>
+            <li></li>
+          </ul>
+        </li>        
+      </ul>
+      <video id="autoplay" class="premier" loop muted>
+        <source src="./data/surf_tidy_planet200.mp4" type="video/mp4">
+      </video>
+      <ul class="premier" id="droite">
+        <li>
+          On parle de nous
+          <ul class="second">
+            <li><a href="http://www.newspress.fr/Communique_EN_312811_7442.aspx">News press</a></li>
+            <li><a href="https://www.brut.media/fr/international/interview-d-une-chargee-de-mission-pour-surfrider-d8e83170-9d4d-463b-81da-98de5e15bf0e">Brut</a></li>
+            <li><a href="https://lareclame.fr/icibarbes/realisations/the-drop">La reclame</a></li>
+            <li><a href="https://www.letelegramme.fr/finistere/plomodiern/surfrider-30-benevoles-au-nettoyage-de-la-plage-de-kervigen-12-11-2018-12131186.php">Le télégramme</a></li>
+          </ul>
+        </li>
+        <li>
+          Les liens utiles
+          <ul class="second">
+            <li><a href="http://www.surfrider.eu/">Surfrider</a></li>
+            <li><a href="http://www.sogeti.com/">Sogeti</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <aside id=formulaire>
+      <h2>Où avez vous ride ?</h2>
+      <label for="lieu"></label>
+      <input type="input" name="" id="lieu">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+    </aside>
     <div class="loader">
       <div class="animation-area">
       <img src="img/final_loader.gif"/>
@@ -109,7 +154,7 @@
       </div>
       <input type="button" value="Envoyer" id="submit-data">
     </div>
-
+    
     <footer>
       <a id="ndli_img" href="https://www.nuitdelinfo.com"><img src="img/ndli.png" width="100" height="100" alt="Logo Nuit de l'Info"></a>
       <a id="surfrider_img" href="https://surfrider.eu/"><img src="https://surfrider.eu/img/logo.svg?c=3" width="100" height="100" alt="Logo surfrider"></a>
@@ -128,6 +173,7 @@
           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
           crossorigin="anonymous">
           </script>
-
+  
   <script src="./js/index.js"></script>
-</html>
+  </body>
+ </html>
