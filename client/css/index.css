@@ -401,6 +401,81 @@ main #surf > span::before {
   FORMULAIRE
 */
 
+
+nav#unroll{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	position: relative;
+	align-items: center;
+}
+
+video#autoplay{
+    border-radius: 50%; 
+	overflow: hidden;
+	position: relative; 	
+    width: 200px;
+	height: 200px;
+	top: -100px;
+    transition: top ease-out .5s;
+}
+video#autoplay:hover{
+    top: 0px;
+}
+
+
+ul.premier{
+	visibility: hidden;
+}
+ul.premier.enBas{
+    visibility: visible;
+}
+
+ul.premier{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.premier > li{
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 150px;
+    background: #999999;
+}
+ul.premier > li:hover{
+	background: #CCCCCC;
+}
+ul.premier li:hover > ul{
+    display: inline;
+}
+ul.premier a{
+	color: black;
+	text-decoration: none;
+	padding: 0 0 0 10px;
+	display: block;
+	line-height: 30px;;
+}
+
+.second{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.second > li{
+    position: relative;
+    height: 30px;
+    background: #999999;
+}
+.second > li:hover{
+	background: #CCCCCC;
+}
+
 #formulaire {
   position: absolute;
 
@@ -504,12 +579,11 @@ main #surf > span::before {
 
 .loader {
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /*background: red;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -577,11 +651,11 @@ main #surf > span::before {
   animation-delay: 5.5s;
 }
 .box-area li:nth-child(4) {
-  left: 42%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 0s;
-  animation-duration: 15s;
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 3s;
+	animation-duration: 15s;
 }
 .box-area li:nth-child(5) {
   left: 65%;
@@ -596,12 +670,40 @@ main #surf > span::before {
   animation-delay: 3.5s;
 }
 @keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-800px) rotate(360deg);
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
 }
+
+/*       crédit surfrider     */
+#zoneTxt{
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  right: 25%;
+}
+
+#zoneTxt > *{
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#zoneTxt > h2{
+  font-weight: bold;
+  background-color: #121b6b;
+  color: white;
+}
+
+#zoneTxt p{
+    background-color: white;
+    border: 2px solid black;
+    left: 20%;
+    right: 20%;
+}
+/************************************/
