@@ -57,6 +57,7 @@ body {
 */
 
 #formulaire {
+	display: none;
 	color: white;
 	padding: 20px;
 	margin: 30vh auto 0 auto;
