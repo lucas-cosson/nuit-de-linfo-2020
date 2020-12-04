@@ -54,9 +54,11 @@ window.addEventListener ("load", function(){
 });
 
 document.getElementById("submit-data").addEventListener("click", async () => {
-    if(waterman.value === "néo" || waterman.value === "Néo"){
+    if(waterman.value === "neo" || waterman.value === "Neo"){
         console.log("bonjour néo");
         document.getElementById("easterEgg").children[0].classList.remove("hidden");
+        waterman.value = "";
+        return;
     }
     const init = {
     method: "POST",
