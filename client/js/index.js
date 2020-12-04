@@ -72,22 +72,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
 
-    document.getElementById("submit-data").addEventListener("click", async () => {
-        if(waterman.value === "néo" || waterman.value === "Néo"){
-            console.log("bonjour néo");
-            document.getElementById("easterEgg").children[0].classList.remove("hidden");
-        }
-        const init = {
-        method: "POST",
-        body: JSON.stringify({
-        waterman: waterman.value,
-        lieu: lieu.value,
-        date_session: date_session.value,
-        time: time.value,
-        pollution: pollution.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-    };
+document.getElementById("submit-data").addEventListener("click", async () => {
+    if(waterman.value === "neo" || waterman.value === "Neo"){
+        document.getElementById("easterEgg").children[0].classList.remove("hidden");
+        waterman.value = "";
+        return;
+    }
+    const init = {
+    method: "POST",
+    body: JSON.stringify({
+      waterman: waterman.value,
+      lieu: lieu.value,
+      date_session: date_session.value,
+      time: time.value,
+      pollution: pollution.value,
+    }),
+    headers: { "Content-Type": "application/json" },
+  };
 
     await fetch(`/api/form/insert`, init);
     });

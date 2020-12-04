@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let letter in leetSpeakData.alphabet) {
         const regex = new RegExp(letter, "gi");
         console.log(child.innerText);
-        child.innerHTML = child.innerHTML.replaceAll(
+        child.innerText = child.innerText.replaceAll(
           regex,
           leetSpeakData.alphabet[letter]
         );
