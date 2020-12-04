@@ -1,6 +1,8 @@
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const mariadb = require("mariadb");
+const mysql = require("mysql");
+const bcryptjs = require("bcryptjs");
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
