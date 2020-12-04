@@ -725,6 +725,7 @@ ul.premier a {
   left: 20%;
   right: 20%;
 }
+
 /************************************/
 
 .view {
@@ -736,4 +737,16 @@ ul.premier a {
 
 .view.display-view {
   display: block;
+}
+
+nav ul li,
+nav ul li ul li {
+  cursor: pointer;
+  padding-bottom: 1em;
+}
+
+.view form {
+  text-align: center;
+  margin: auto;
+  padding: 2em;
 }

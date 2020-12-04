@@ -90,23 +90,41 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     });
 
-document.getElementById("submit-data").addEventListener("click", async () => {
-    if(waterman.value === "neo" || waterman.value === "Neo"){
-        document.getElementById("easterEgg").children[0].classList.remove("hidden");
-        waterman.value = "";
-        return;
-    }
-    const init = {
-    method: "POST",
-    body: JSON.stringify({
-      waterman: waterman.value,
-      lieu: lieu.value,
-      date_session: date_session.value,
-      time: time.value,
-      pollution: pollution.value,
-    }),
-    headers: { "Content-Type": "application/json" },
-  };
+    // Nav bar 
+    document.querySelector("#gauche .premier:first-child").addEventListener("click", () => {
+        const doc = document.querySelector(".display-view");
+        document.getElementById("register-view").classList.toggle("display-view");
+        doc.classList.toggle("display-view");
+    });
+
+    document.querySelector("#gauche .premier:last-child").addEventListener("click", () => {
+        const doc = document.querySelector(".display-view");
+        document.getElementById("connect-view").classList.toggle("display-view");
+        doc.classList.toggle("display-view");
+    });
+
+    document.querySelector("#gauche .second:first-child").addEventListener("click", () => {
+        document.querySelector(".display-view").classList.toggle("display-view");
+        document.getElementById("formulaire").classList.toggle("display-view");
+    });
+
+    document.getElementById("submit-data").addEventListener("click", async () => {
+        if(waterman.value === "neo" || waterman.value === "Neo"){
+            document.getElementById("easterEgg").children[0].classList.remove("hidden");
+            waterman.value = "";
+            return;
+        }
+        const init = {
+        method: "POST",
+        body: JSON.stringify({
+        waterman: waterman.value,
+        lieu: lieu.value,
+        date_session: date_session.value,
+        time: time.value,
+        pollution: pollution.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+    };
 
     await fetch(`/api/form/insert`, init);
   });
