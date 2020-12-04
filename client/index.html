@@ -1,18 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap"
+          rel="stylesheet">
     <title>La nuit de l'info 2020</title>
     <script src="js/index.js" defer></script>
     <script src="js/leet_speak.js"></script>
   </head>
   <body>
-    <h1>La pire team</h1>
 
+    <h1>Surfpwaves</h1>
     <button id="leet-speak">On 3st d3s h4ck3rs</button>
-
-    <p>C'est Medhi le capitaine.</p>
+    <main>
+     <nav></nav>
+      <div class="container-fluid" id="carousel">
+        <div id="carouselExampleIndicators"
+            class="carousel slide"
+            data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators"
+                data-slide-to="0"
+                class="active"></li>
+            <li data-target="#carouselExampleIndicators"
+                data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators"
+                data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators"
+                data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="https://surfrider.eu/">
+                <img src="img/pas_se_ruiner.png"
+                    alt="Lien vers surfrider.eu"
+                    onError="this.onerror=null;this.src='./img/default.jpg';">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.lepoiriergourmand.fr"><img 
+                    src='./img/default.jpg'
+                    alt="Second slide"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.driiveme.com/">
+                <img src="./img/default.jpg"
+                    alt="Third slide">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.onceagain.fr/collections/friperie-en-ligne">
+                <img src="./img/default.jpg"
+                    alt="Fourth slide"></a>
+            </div>
+          </div>
+          <a class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev">
+            <span class="carousel-control-prev-icon"
+                  aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next">
+            <span class="carousel-control-next-icon"
+                  aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div id="mer"><span></span><span></span><span></span></div>
+      <div id="vague"><span></span><span></span><span></span><span></span><span></span></div>
+      <div id="plage"><span></span><span></span></div>
+      <div id="serviette"></div>
+      <div id="parasol"><span></span></div>
+      <div id="surf"><span></span></div>
+    </main>
+    <footer></footer>
   </body>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous">
+          </script>
+
+    <a id="ndli_img" href="https://www.nuitdelinfo.com"><img src="img/ndli.png" width="100" height="100" alt="Logo Nuit de l'Info"></a>
+    <a id="surfrider_img" href="https://surfrider.eu/"><img src="https://surfrider.eu/img/logo.svg?c=3" width="100" height="100" alt="Logo surfrider"></a>
+    <aside id=formulaire>
+      <h2>Où avez vous ride ?</h2>
+      <label for="lieu"></label>
+      <input type="input" name="" id="lieu">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+    </aside>
+  </body>
+
+
 </html>
