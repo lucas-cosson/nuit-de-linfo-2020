@@ -711,3 +711,14 @@ ul.premier a {
   right: 20%;
 }
 /************************************/
+
+#darkmode {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border: none;
+  background: gray;
+  color: white;
+  border-radius: 10px;
+  z-index: 100;
+}
