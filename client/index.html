@@ -20,6 +20,20 @@
     <script src="js/leet_speak.js"></script>
   </head>
   <body>
+    <div class="loader">
+      <div class="animation-area">
+      <img src="img/final_loader.gif"/>
+      </div>
+      <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    </div>
+
     <h1>Surfpwaves</h1>
     <div id="easterEgg"><div  class="hidden"><p>Choisis une pilule, Néo</p><button></button><button></button></div></div>
     <div id="leet-speak"><div class="hidden">W31C0M3 70 7H3 R431 W0R1D<button>3N73R 7H3 M47R1X</button></div></div>
@@ -70,15 +84,15 @@
 
     </main>
   
-    <aside id=formulaire>
+    <div id=formulaire>
       <h2>Où avez vous ride ?</h2>
       <div>
-        <label for="lieu">Nom du waterman :</label>
-        <input type="input" id="waterman">
+        <label for="waterman">Nom du waterman :</label>
+        <input type="text" id="waterman">
       </div>
       <div>
         <label for="lieu">Lieu :</label>
-        <input type="input" id="lieu">
+        <input type="text" id="lieu">
       </div>
       <div>
         <label for="">Date de session :</label>
@@ -89,17 +103,17 @@
         <input type="time" id="time" value="00:00">
       </div>
       <div>
-        <label for="polution">Polution visible :</label>
-        <p id="polution-value">50%</p>
-        <input type="range" id="polution">
+        <label for="pollution">Pollution visible :</label>
+        <p id="pollution-value">50%</p>
+        <input type="range" id="pollution">
       </div>
       <input type="button" value="Envoyer" id="submit-data">
-    </aside>
+    </div>
+
     <footer>
       <a id="ndli_img" href="https://www.nuitdelinfo.com"><img src="img/ndli.png" width="100" height="100" alt="Logo Nuit de l'Info"></a>
       <a id="surfrider_img" href="https://surfrider.eu/"><img src="https://surfrider.eu/img/logo.svg?c=3" width="100" height="100" alt="Logo surfrider"></a>
     </footer>
-  </body>
   
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
           integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -114,7 +128,6 @@
           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
           crossorigin="anonymous">
           </script>
-
 
   <script src="./js/index.js"></script>
 </html>
